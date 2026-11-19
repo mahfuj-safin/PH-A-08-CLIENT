@@ -1,5 +1,5 @@
 "use client";
-
+import { FadeUp } from "@/components/ui/MotionPrimitives";
 import { useState, Suspense } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -61,7 +61,7 @@ function LoginForm() {
 
   return (
     <section className="min-h-[80vh] flex items-center justify-center px-4 py-12">
-      <div className="w-full max-w-md bg-base-100 border border-base-300 rounded-2xl shadow-xl p-8">
+      <FadeUp className="w-full max-w-md bg-base-100 border border-base-300 rounded-2xl shadow-xl p-8">
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary mb-3">
             <BookOpen className="w-6 h-6" />
@@ -171,7 +171,7 @@ function LoginForm() {
             Create an account
           </Link>
         </p>
-      </div>
+      </FadeUp>
     </section>
   );
 }

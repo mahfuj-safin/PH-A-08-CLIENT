@@ -1,5 +1,5 @@
 "use client";
-
+import { FadeUp } from "@/components/ui/MotionPrimitives";
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -90,7 +90,7 @@ export default function RegisterPage() {
 
   return (
     <section className="min-h-[82vh] flex items-center justify-center px-4 py-12">
-      <div className="w-full max-w-md bg-base-100 border border-base-300 rounded-2xl shadow-xl p-8">
+      <FadeUp className="w-full max-w-md bg-base-100 border border-base-300 rounded-2xl shadow-xl p-8">
         <div className="text-center mb-7">
           <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary mb-3">
             <BookOpen className="w-6 h-6" />
@@ -244,7 +244,7 @@ export default function RegisterPage() {
             Sign in
           </Link>
         </p>
-      </div>
+      </FadeUp>
     </section>
   );
 }
