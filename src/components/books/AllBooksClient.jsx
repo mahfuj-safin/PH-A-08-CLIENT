@@ -1,5 +1,5 @@
 "use client";
-
+import { motion } from "framer-motion";
 import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Search, SlidersHorizontal, BookOpen } from "lucide-react";
@@ -80,19 +80,29 @@ function AllBooksContent() {
             <SlidersHorizontal className="w-3.5 h-3.5" />
             Genre:
           </span>
-          {CATEGORIES.map((cat) => (
-            <button
-              key={cat}
-              type="button"
-              onClick={() => setSelectedCategory(cat)}
-              className={`btn btn-sm rounded-xl ${selectedCategory === cat
-                ? "btn-primary"
-                : "btn-ghost bg-base-100 border border-base-300"
-                }`}
-            >
-              {cat}
-            </button>
-          ))}
+          {CATEGORIES.map((cat) => {
+            const isSelected = selectedCategory === cat;
+            return (
+              <button
+                key={cat}
+                type="button"
+                onClick={() => setSelectedCategory(cat)}
+                className={`relative px-4 py-1.5 rounded-xl text-sm font-medium transition-colors cursor-pointer ${isSelected
+                  ? "text-primary-content"
+                  : "text-base-content/75 hover:text-base-content bg-base-200/70"
+                  }`}
+              >
+                {isSelected && (
+                  <motion.span
+                    layoutId="books-category-pill"
+                    transition={{ type: "spring", stiffness: 380, damping: 28 }}
+                    className="absolute inset-0 rounded-xl bg-primary -z-10 shadow-sm"
+                  />
+                )}
+                {cat}
+              </button>
+            );
+          })}
         </div>
       </div>
 
