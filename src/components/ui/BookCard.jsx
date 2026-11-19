@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, BookCopy } from "lucide-react";
+import Image from "next/image";
 
 export default function BookCard({ book }) {
   const isAvailable = (book.totalCopies ?? 1) > 0;
@@ -15,10 +16,13 @@ export default function BookCard({ book }) {
     >
       {/* Fixed 4:5 image container so all cards have identical image height */}
       <div className="relative aspect-[4/5] w-full overflow-hidden bg-base-200">
-        <img
+        <Image
           src={book.image}
           alt={book.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          unoptimized
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
         />
 
         {/* Category Badge */}

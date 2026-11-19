@@ -206,6 +206,9 @@ function AddBookForm() {
                 <Image
                   src={imagePreview}
                   alt="Cover preview"
+                  width={112}
+                  height={144}
+                  unoptimized
                   className="w-28 h-36 object-cover rounded-xl shadow-md border border-base-300"
                 />
                 <div className="flex-1 text-center sm:text-left space-y-2">

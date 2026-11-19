@@ -56,9 +56,13 @@ export default function HeroSlider() {
               <div className="relative w-full h-full flex items-center">
                 {/* Background Image */}
                 <Image
+
                   src={slide.image}
                   alt={slide.title}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  fill
+                  sizes="100vw"
+                  priority={idx === 0}
+                  className="object-cover"
                 />
                 {/* Editorial Dark Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-r from-stone-950/90 via-stone-950/65 to-stone-950/25" />

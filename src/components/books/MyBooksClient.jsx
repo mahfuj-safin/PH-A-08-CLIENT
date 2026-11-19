@@ -216,6 +216,9 @@ function MyBooksContent() {
                         <Image
                           src={book.image}
                           alt={book.title}
+                          width={48}
+                          height={64}
+                          unoptimized
                           className="w-12 h-16 rounded-lg object-cover border border-base-300 shrink-0"
                         />
                         <div className="min-w-0">
@@ -369,6 +372,9 @@ function MyBooksContent() {
                 <Image
                   src={newImagePreview || editForm.image}
                   alt="Book cover"
+                  width={64}
+                  height={80}
+                  unoptimized
                   className="w-16 h-20 object-cover rounded-lg border border-base-300"
                 />
                 <div className="flex-1">
